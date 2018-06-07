@@ -8,13 +8,29 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh slack && \
 # Artifacts
     /usr/local/bin/install-plugins.sh htmlpublisher && \
+# SCM
+    /usr/local/bin/install-plugins.sh git && \
 # UI
+    /usr/local/bin/install-plugins.sh cloudbees-folder && \
     /usr/local/bin/install-plugins.sh greenballs && \
     /usr/local/bin/install-plugins.sh simple-theme-plugin && \
+# Security
+    /usr/local/bin/install-plugins.sh dependency-check-jenkins-plugin && \
+    /usr/local/bin/install-plugins.sh antisamy-markup-formatter && \
+# Workflow/Pipeline
+    /usr/local/bin/install-plugins.sh workflow-aggregator && \
+    /usr/local/bin/install-plugins.sh timestamper && \
+    /usr/local/bin/install-plugins.sh ws-cleanup && \
+    /usr/local/bin/install-plugins.sh build-timeout && \
+    /usr/local/bin/install-plugins.sh credentials-binding && \
 # Scaling
     /usr/local/bin/install-plugins.sh kubernetes && \
+# LDAP
+    /usr/local/bin/install-plugins.sh ldap && \
 # Matrix-base security
-    /usr/local/bin/install-plugins.sh matrix-auth
+    /usr/local/bin/install-plugins.sh matrix-auth && \
+# JIRA plugin
+    /usr/local/bin/install-plugins.sh jira
 
 # switch to root for easy debugging
 USER root
