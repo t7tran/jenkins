@@ -12,7 +12,9 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh greenballs && \
     /usr/local/bin/install-plugins.sh simple-theme-plugin && \
 # Scaling
-    /usr/local/bin/install-plugins.sh kubernetes
+    /usr/local/bin/install-plugins.sh kubernetes && \
+# Matrix-base security
+    /usr/local/bin/install-plugins.sh matrix-auth
 
 # switch to root for easy debugging
 USER root
