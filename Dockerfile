@@ -19,6 +19,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh antisamy-markup-formatter && \
 # Workflow/Pipeline
     /usr/local/bin/install-plugins.sh workflow-aggregator && \
+    /usr/local/bin/install-plugins.sh blueocean && \
     /usr/local/bin/install-plugins.sh timestamper && \
     /usr/local/bin/install-plugins.sh ws-cleanup && \
     /usr/local/bin/install-plugins.sh build-timeout && \
