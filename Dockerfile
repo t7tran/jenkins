@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.126-alpine
+FROM jenkins/jenkins:2.127-alpine
 
 # Distributed Builds plugins
 RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
@@ -14,6 +14,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh cloudbees-folder && \
     /usr/local/bin/install-plugins.sh greenballs && \
     /usr/local/bin/install-plugins.sh simple-theme-plugin && \
+    /usr/local/bin/install-plugins.sh ansicolor && \
 # Security
     /usr/local/bin/install-plugins.sh dependency-check-jenkins-plugin && \
     /usr/local/bin/install-plugins.sh antisamy-markup-formatter && \
@@ -36,6 +37,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
 # switch to root for easy debugging
 USER root
 
+# install Maven
 RUN apk --no-cache add tzdata curl dpkg openssl && \
     # install gosu
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
