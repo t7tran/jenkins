@@ -36,8 +36,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
 # switch to root for easy debugging
 USER root
 
-# install Maven
-RUN apk --no-cache add tzdata curl dpkg openssl maven && \
+RUN apk --no-cache add tzdata curl dpkg openssl && \
     # install gosu
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
     curl -fsSL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$dpkgArch" -o /usr/local/bin/gosu && \
