@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.127-alpine
+FROM jenkins/jenkins:2.128-alpine
 
 # Distributed Builds plugins
 RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
@@ -18,6 +18,8 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
 # Security
     /usr/local/bin/install-plugins.sh dependency-check-jenkins-plugin && \
     /usr/local/bin/install-plugins.sh antisamy-markup-formatter && \
+    /usr/local/bin/install-plugins.sh matrix-auth && \
+    /usr/local/bin/install-plugins.sh role-strategy && \
 # Workflow/Pipeline
     /usr/local/bin/install-plugins.sh workflow-aggregator && \
     /usr/local/bin/install-plugins.sh blueocean && \
@@ -25,12 +27,12 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh ws-cleanup && \
     /usr/local/bin/install-plugins.sh build-timeout && \
     /usr/local/bin/install-plugins.sh credentials-binding && \
+    /usr/local/bin/install-plugins.sh xml-job-to-job-dsl && \
+    /usr/local/bin/install-plugins.sh job-dsl && \
 # Scaling
     /usr/local/bin/install-plugins.sh kubernetes && \
 # LDAP
     /usr/local/bin/install-plugins.sh ldap && \
-# Matrix-base security
-    /usr/local/bin/install-plugins.sh matrix-auth && \
 # JIRA plugin
     /usr/local/bin/install-plugins.sh jira
 
