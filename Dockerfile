@@ -15,6 +15,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh greenballs && \
     /usr/local/bin/install-plugins.sh simple-theme-plugin && \
     /usr/local/bin/install-plugins.sh ansicolor && \
+    /usr/local/bin/install-plugins.sh view-job-filters && \
 # Security
     /usr/local/bin/install-plugins.sh dependency-check-jenkins-plugin && \
     /usr/local/bin/install-plugins.sh antisamy-markup-formatter && \
@@ -39,6 +40,10 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
 # switch to root for easy debugging
 USER root
 
+ENV TZ=Australia/Melbourne
+
+COPY entrypoint.sh /
+
 # install Maven
 RUN apk --no-cache add tzdata curl dpkg openssl && \
     # install gosu
@@ -47,7 +52,8 @@ RUN apk --no-cache add tzdata curl dpkg openssl && \
     chmod +x /usr/local/bin/gosu && \
     gosu nobody true && \
     # complete gosu
+    chmod +x /entrypoint.sh && \
     apk del curl dpkg && \
     rm -rf /apk /tmp/* /var/cache/apk/*
 
-ENTRYPOINT ["gosu", "jenkins", "/sbin/tini", "--", "/usr/local/bin/jenkins.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
