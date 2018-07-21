@@ -6,6 +6,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh email-ext && \
     /usr/local/bin/install-plugins.sh mailer && \
     /usr/local/bin/install-plugins.sh slack && \
+    /usr/local/bin/install-plugins.sh http_request && \
 # Artifacts
     /usr/local/bin/install-plugins.sh htmlpublisher && \
 # SCM
