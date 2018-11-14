@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.138.2-alpine
+FROM jenkins/jenkins:2.138.3-alpine
 
 # Distributed Builds plugins
 RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
@@ -46,7 +46,6 @@ ENV TZ=Australia/Melbourne
 
 COPY entrypoint.sh /
 
-# install Maven
 RUN apk --no-cache add tzdata curl dpkg openssl && \
     # install gosu
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
