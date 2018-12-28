@@ -24,6 +24,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh matrix-auth && \
     /usr/local/bin/install-plugins.sh role-strategy && \
 # Workflow/Pipeline
+    /usr/local/bin/install-plugins.sh basic-branch-build-strategies && \
     /usr/local/bin/install-plugins.sh workflow-aggregator && \
     /usr/local/bin/install-plugins.sh blueocean && \
     /usr/local/bin/install-plugins.sh timestamper && \
