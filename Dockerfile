@@ -33,6 +33,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh credentials-binding && \
     /usr/local/bin/install-plugins.sh job-dsl && \
     /usr/local/bin/install-plugins.sh global-post-script && \
+    /usr/local/bin/install-plugins.sh kubernetes-cli && \
 # Reporting
     /usr/local/bin/install-plugins.sh jacoco && \
     /usr/local/bin/install-plugins.sh cobertura && \
