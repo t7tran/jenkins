@@ -19,6 +19,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh dashboard-view && \
     /usr/local/bin/install-plugins.sh view-job-filters && \
 # Security
+    /usr/local/bin/install-plugins.sh google-login && \
     /usr/local/bin/install-plugins.sh dependency-check-jenkins-plugin && \
     /usr/local/bin/install-plugins.sh antisamy-markup-formatter && \
     /usr/local/bin/install-plugins.sh matrix-auth && \
