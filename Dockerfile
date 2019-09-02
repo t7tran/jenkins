@@ -2,6 +2,7 @@ FROM jenkins/jenkins:2.176.2-alpine
 
 # Distributed Builds plugins
 RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
+    /usr/local/bin/install-plugins.sh configuration-as-code && \
 # install Notifications and Publishing plugins
     /usr/local/bin/install-plugins.sh email-ext && \
     /usr/local/bin/install-plugins.sh mailer && \
@@ -35,6 +36,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh job-dsl && \
     /usr/local/bin/install-plugins.sh global-post-script && \
     /usr/local/bin/install-plugins.sh kubernetes-cli && \
+    /usr/local/bin/install-plugins.sh google-kubernetes-engine && \
 # Reporting
     /usr/local/bin/install-plugins.sh jacoco && \
     /usr/local/bin/install-plugins.sh cobertura && \
