@@ -45,7 +45,9 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
 # LDAP
     /usr/local/bin/install-plugins.sh ldap && \
 # JIRA plugin
-    /usr/local/bin/install-plugins.sh jira
+    /usr/local/bin/install-plugins.sh jira && \
+# force upgrade due to dependencies check failed in 2.204
+    /usr/local/bin/install-plugins.sh bouncycastle-api
 
 # switch to root for easy debugging
 USER root
