@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.190.3-alpine
+FROM jenkins/jenkins:2.204.2-alpine
 
 # Distributed Builds plugins
 RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
@@ -57,7 +57,7 @@ COPY entrypoint.sh /
 RUN apk --no-cache add tzdata curl dpkg openssl && \
     # install gosu
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
-    curl -fsSL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$dpkgArch" -o /usr/local/bin/gosu && \
+    curl -fsSL "https://github.com/tianon/gosu/releases/download/1.11/gosu-$dpkgArch" -o /usr/local/bin/gosu && \
     chmod +x /usr/local/bin/gosu && \
     gosu nobody true && \
     # complete gosu
