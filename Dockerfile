@@ -1,7 +1,16 @@
 FROM jenkins/jenkins:2.204.2-alpine
 
+# force upgrade to the latest
+RUN /usr/local/bin/install-plugins.sh ant && \
+    /usr/local/bin/install-plugins.sh bouncycastle-api && \
+    /usr/local/bin/install-plugins.sh command-launcher && \
+    /usr/local/bin/install-plugins.sh external-monitor-job && \
+    /usr/local/bin/install-plugins.sh javadoc && \
+    /usr/local/bin/install-plugins.sh jdk-tool && \
+    /usr/local/bin/install-plugins.sh pam-auth && \
+    /usr/local/bin/install-plugins.sh windows-slaves && \
 # Distributed Builds plugins
-RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
+    /usr/local/bin/install-plugins.sh ssh-slaves && \
     /usr/local/bin/install-plugins.sh configuration-as-code && \
 # install Notifications and Publishing plugins
     /usr/local/bin/install-plugins.sh email-ext && \
@@ -45,9 +54,7 @@ RUN /usr/local/bin/install-plugins.sh ssh-slaves && \
 # LDAP
     /usr/local/bin/install-plugins.sh ldap && \
 # JIRA plugin
-    /usr/local/bin/install-plugins.sh jira && \
-# force upgrade due to dependencies check failed in 2.204
-    /usr/local/bin/install-plugins.sh bouncycastle-api
+    /usr/local/bin/install-plugins.sh jira
 
 # switch to root for easy debugging
 USER root
