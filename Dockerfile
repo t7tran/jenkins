@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.204.2-alpine
+FROM jenkins/jenkins:2.204.5-alpine
 
 # force upgrade to the latest
 RUN /usr/local/bin/install-plugins.sh ant && \
