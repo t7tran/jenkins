@@ -17,6 +17,7 @@ RUN /usr/local/bin/install-plugins.sh ant && \
     /usr/local/bin/install-plugins.sh mailer && \
     /usr/local/bin/install-plugins.sh slack && \
     /usr/local/bin/install-plugins.sh http_request && \
+    /usr/local/bin/install-plugins.sh google-hangouts-chat-notifier:1.0:true:https://storage.googleapis.com/jenkins-bot-production.appspot.com/plugin/1.0/google-hangouts-chat-notifier.hpi && \
 # Artifacts
     /usr/local/bin/install-plugins.sh htmlpublisher && \
 # SCM
