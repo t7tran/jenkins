@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.249.1-alpine
+FROM jenkins/jenkins:2.235.5-alpine
 
 # force upgrade to the latest
 RUN echo -e '\
