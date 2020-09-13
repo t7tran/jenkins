@@ -48,6 +48,7 @@ RUN echo -e '\
     global-post-script \n\
     kubernetes-cli \n\
     google-kubernetes-engine \n\
+    build-user-vars-plugin \n\
   # Reporting \n\
     jacoco \n\
     cobertura \n\
