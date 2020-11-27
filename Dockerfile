@@ -49,6 +49,7 @@ RUN echo -e '\
     kubernetes-cli \n\
     google-kubernetes-engine \n\
     build-user-vars-plugin \n\
+    validating-string-parameter \n\
   # Reporting \n\
     jacoco \n\
     cobertura \n\
