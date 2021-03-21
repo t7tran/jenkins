@@ -40,6 +40,7 @@ RUN echo -e '\
     basic-branch-build-strategies \n\
     workflow-aggregator \n\
     blueocean \n\
+    blueocean-jira \n\
     timestamper \n\
     ws-cleanup \n\
     build-timeout \n\
