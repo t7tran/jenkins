@@ -9,9 +9,9 @@ RUN echo -e '\
     javadoc \n\
     jdk-tool \n\
     pam-auth \n\
-    windows-slaves \n\
+  # windows-slaves \n\
   # Distributed Builds plugins \n\
-    ssh-slaves \n\
+  # ssh-slaves \n\
     configuration-as-code \n\
   # install Notifications and Publishing plugins \n\
     email-ext \n\
