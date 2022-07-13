@@ -1,65 +1,52 @@
 FROM jenkins/jenkins:2.346.1-lts-alpine
 
 # force upgrade to the latest
-RUN echo -e '\
-    ant \n\
-    bouncycastle-api \n\
-    command-launcher \n\
-    external-monitor-job \n\
-    javadoc \n\
-    jdk-tool \n\
-    pam-auth \n\
-  # windows-slaves \n\
-  # Distributed Builds plugins \n\
-  # ssh-slaves \n\
-    configuration-as-code \n\
-  # install Notifications and Publishing plugins \n\
-    email-ext \n\
-    mailer \n\
-    slack \n\
-    http_request \n\
-    google-hangouts-chat-notifier:1.0:true:https://storage.googleapis.com/jenkins-bot-production.appspot.com/plugin/1.0/google-hangouts-chat-notifier.hpi \n\
-  # Artifacts \n\
-    htmlpublisher \n\
-  # SCM \n\
-    git \n\
-  # UI \n\
-    cloudbees-folder \n\
-    greenballs \n\
-    simple-theme-plugin \n\
-    ansicolor \n\
-    dashboard-view \n\
-    view-job-filters \n\
-  # Security \n\
-    google-login \n\
-    dependency-check-jenkins-plugin \n\
-    antisamy-markup-formatter \n\
-    matrix-auth \n\
-    role-strategy \n\
-  # Workflow/Pipeline \n\
-    basic-branch-build-strategies \n\
-    workflow-aggregator \n\
-    blueocean \n\
-    blueocean-jira \n\
-    timestamper \n\
-    ws-cleanup \n\
-    build-timeout \n\
-    credentials-binding \n\
-    job-dsl \n\
-    global-post-script \n\
-    kubernetes-cli \n\
-    google-kubernetes-engine \n\
-    build-user-vars-plugin \n\
-    validating-string-parameter \n\
-  # Reporting \n\
-    jacoco \n\
-    cobertura \n\
-  # Scaling \n\
-    kubernetes \n\
-  # LDAP \n\
-    ldap \n\
-    jira \n\
-    ' | /usr/local/bin/install-plugins.sh
+RUN jenkins-plugin-cli --plugins \
+    ant \
+    bouncycastle-api \
+    command-launcher \
+    external-monitor-job \
+    javadoc \
+    jdk-tool \
+    pam-auth \
+    configuration-as-code \
+    email-ext \
+    mailer \
+    slack \
+    http_request \
+    google-hangouts-chat-notifier:1.0:https://storage.googleapis.com/jenkins-bot-production.appspot.com/plugin/1.0/google-hangouts-chat-notifier.hpi \
+    htmlpublisher \
+    git \
+    cloudbees-folder \
+    greenballs \
+    simple-theme-plugin \
+    ansicolor \
+    dashboard-view \
+    view-job-filters \
+    google-login \
+    dependency-check-jenkins-plugin \
+    antisamy-markup-formatter \
+    matrix-auth \
+    role-strategy \
+    basic-branch-build-strategies \
+    workflow-aggregator \
+    blueocean \
+    blueocean-jira \
+    timestamper \
+    ws-cleanup \
+    build-timeout \
+    credentials-binding \
+    job-dsl \
+    global-post-script \
+    kubernetes-cli \
+    google-kubernetes-engine \
+    build-user-vars-plugin \
+    validating-string-parameter \
+    jacoco \
+    cobertura \
+    kubernetes \
+    ldap \
+    jira
 
 # switch to root for easy debugging
 USER root
