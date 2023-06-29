@@ -55,7 +55,8 @@ ENV TZ=Australia/Melbourne
 
 COPY entrypoint.sh /
 
-RUN apk --no-cache add tzdata curl dpkg openssl && \
+RUN apk upgrade --no-cache && \
+    apk --no-cache add tzdata curl dpkg openssl && \
     # install gosu
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
     curl -fsSL "https://github.com/tianon/gosu/releases/download/1.14/gosu-$dpkgArch" -o /usr/local/bin/gosu && \
