@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.401.2-lts-alpine
+FROM jenkins/jenkins:2.401.3-lts-alpine
 
 # force upgrade to the latest
 RUN jenkins-plugin-cli --plugins \
