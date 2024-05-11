@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.401.3-lts-alpine
+FROM jenkins/jenkins:2.440.3-lts-alpine
 
 # force upgrade to the latest
 RUN jenkins-plugin-cli --plugins \
@@ -59,7 +59,7 @@ RUN apk upgrade --no-cache && \
     apk --no-cache add tzdata curl dpkg openssl && \
     # install gosu
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
-    curl -fsSL "https://github.com/tianon/gosu/releases/download/1.14/gosu-$dpkgArch" -o /usr/local/bin/gosu && \
+    curl -fsSL "https://github.com/tianon/gosu/releases/download/1.17/gosu-$dpkgArch" -o /usr/local/bin/gosu && \
     chmod +x /usr/local/bin/gosu && \
     gosu nobody true && \
     # complete gosu
