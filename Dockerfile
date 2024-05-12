@@ -18,7 +18,6 @@ RUN jenkins-plugin-cli --plugins \
     htmlpublisher \
     git \
     cloudbees-folder \
-    greenballs \
     simple-theme-plugin \
     ansicolor \
     dashboard-view \
