@@ -41,8 +41,6 @@ RUN jenkins-plugin-cli --plugins \
     google-kubernetes-engine \
     build-user-vars-plugin \
     validating-string-parameter \
-    jacoco \
-    cobertura \
     kubernetes \
     ldap \
     jira
